@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 11:24:50 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/31 19:04:26 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/11/01 00:14:13 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ static int	ft_convert(char c, va_list *ap)
 	else if (c == 'u')
 		return (ft_putnbr(va_arg(*ap, unsigned int)));
 	else if (c == 'X')
-		return (ft_puthexa_maj(va_arg(*ap, unsigned int)));
+		return (ft_puthexa_long(va_arg(*ap, unsigned int), 1));
 	else if (c == 'x')
-		return (ft_puthexa_min(va_arg(*ap, unsigned int)));
+		return (ft_puthexa_long(va_arg(*ap, unsigned int), 0));
+	else if (c == 'p')
+		return (ft_putmem(va_arg(*ap, void *)));
 	else if (c == '%')
 		return (ft_putchar('%'));	
 	return (0);
@@ -61,7 +63,9 @@ int	ft_printf(const char *format, ...)
 #include <limits.h>
 int main (void)
 {
-	int	hex = INT_MAX;
-	printf("%x\n", hex);
-	ft_printf("%x\n", hex);
+	int	a;
+
+	ft_putmem(&a);
+	printf("\n%p\n", &a);
+	return (0);
 }

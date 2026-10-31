@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:15:35 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/31 19:03:03 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/11/01 00:02:15 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_putchar(char c)
 	ft_putchar_fd(c, 1);
 	return (1);
 }
+
 int	ft_putstr(char *s)
 {
 	if (!s)
@@ -24,6 +25,7 @@ int	ft_putstr(char *s)
 	ft_putstr_fd(s, 1);;
 	return (ft_strlen(s));
 }
+
 int	ft_putnbr(int n)
 {
 	int		count;
@@ -44,12 +46,13 @@ int	ft_putnbr(int n)
 	}
 	return (count);
 }
-int	ft_puthexa_maj(unsigned int n)
+
+int	ft_puthexa_long(unsigned long n, int upper)
 {
 	int		i;
 	int		len;
 	int		tmp;
-	char	res[9];
+	char	res[17];
 
 	i = 0;
 	if (n == 0)
@@ -62,33 +65,8 @@ int	ft_puthexa_maj(unsigned int n)
 		tmp = n % 16;
 		if (tmp < 10)
 			res[i++] = tmp + '0';
-		else
+		else if (upper)
 			res[i++] = tmp - 10 + 'A';
-		n = n / 16;
-	}
-	len = i;
-	while (i > 0)
-		ft_putchar(res[--i]);
-	return (len);
-}
-int	ft_puthexa_min(unsigned int n)
-{
-	int		i;
-	int		len;
-	int		tmp;
-	char	res[9];
-
-	i = 0;
-	if (n == 0)
-	{
-		ft_putchar('0');
-		return (1);
-	}
-	while (n != 0)
-	{
-		tmp = n % 16;
-		if (tmp < 10)
-			res[i++] = tmp + '0';
 		else
 			res[i++] = tmp - 10 + 'a';
 		n = n / 16;
@@ -97,4 +75,15 @@ int	ft_puthexa_min(unsigned int n)
 	while (i > 0)
 		ft_putchar(res[--i]);
 	return (len);
+}
+
+int	ft_putmem(void *n)
+{
+	if (n == NULL)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
+	write(1, "0x", 2);
+	return (2 + ft_puthexa_long((unsigned long)n, 0));
 }
