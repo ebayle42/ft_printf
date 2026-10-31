@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:15:35 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/31 12:53:57 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/31 19:03:03 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_putchar(char c)
 int	ft_putstr(char *s)
 {
 	if (!s)
-		return "(null)";
+		return (0);
 	ft_putstr_fd(s, 1);;
 	return (ft_strlen(s));
 }
@@ -43,4 +43,58 @@ int	ft_putnbr(int n)
 		count++;
 	}
 	return (count);
+}
+int	ft_puthexa_maj(unsigned int n)
+{
+	int		i;
+	int		len;
+	int		tmp;
+	char	res[9];
+
+	i = 0;
+	if (n == 0)
+	{
+		ft_putchar('0');
+		return (1);
+	}
+	while (n != 0)
+	{
+		tmp = n % 16;
+		if (tmp < 10)
+			res[i++] = tmp + '0';
+		else
+			res[i++] = tmp - 10 + 'A';
+		n = n / 16;
+	}
+	len = i;
+	while (i > 0)
+		ft_putchar(res[--i]);
+	return (len);
+}
+int	ft_puthexa_min(unsigned int n)
+{
+	int		i;
+	int		len;
+	int		tmp;
+	char	res[9];
+
+	i = 0;
+	if (n == 0)
+	{
+		ft_putchar('0');
+		return (1);
+	}
+	while (n != 0)
+	{
+		tmp = n % 16;
+		if (tmp < 10)
+			res[i++] = tmp + '0';
+		else
+			res[i++] = tmp - 10 + 'a';
+		n = n / 16;
+	}
+	len = i;
+	while (i > 0)
+		ft_putchar(res[--i]);
+	return (len);
 }

@@ -35,8 +35,7 @@ make re     # fclean + all
 - `man 3` page of printf() function
 - `man 3` page of va_start, va_arg, va_end and va_copy
 - [GNU Make manual](https://www.gnu.org/software/make/manual/make.html)
-- [printf_tester](https://github.com/nda-cunh/printf_tester)
-- [StackOverflow](https://stackoverflow.com/questions)
+- [printf_tester](https://github.com/nda-cunh/printf_tester) by [nda-cunh](https://github.com/nda-cunh/)
 
 AI usage: Claude was used as a peer reviewer to point out edge cases and bugs
 through hints, and to help with the Makefile and this README. All functions

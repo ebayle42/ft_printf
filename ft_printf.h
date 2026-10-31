@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 11:25:05 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/31 12:53:06 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/31 19:04:35 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,6 @@ int	ft_printf(const char *, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr(int n);
+int	ft_puthexa_maj(unsigned int n);
+int	ft_puthexa_min(unsigned int n);
 #endif
