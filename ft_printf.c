@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 11:24:50 by ebayle            #+#    #+#             */
-/*   Updated: 2026/11/01 00:14:13 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/11/01 00:17:36 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ static int	ft_convert(char c, va_list *ap)
 		return (ft_putnbr(va_arg(*ap, int)));
 	else if (c == 'u')
 		return (ft_putnbr(va_arg(*ap, unsigned int)));
-	else if (c == 'X')
-		return (ft_puthexa_long(va_arg(*ap, unsigned int), 1));
-	else if (c == 'x')
-		return (ft_puthexa_long(va_arg(*ap, unsigned int), 0));
+	else if (c == 'X' || c == 'x')
+		return (ft_puthexa_long(va_arg(*ap, unsigned int), c));
 	else if (c == 'p')
 		return (ft_putmem(va_arg(*ap, void *)));
 	else if (c == '%')
@@ -63,9 +61,6 @@ int	ft_printf(const char *format, ...)
 #include <limits.h>
 int main (void)
 {
-	int	a;
-
-	ft_putmem(&a);
-	printf("\n%p\n", &a);
+	ft_printf("%x", 42);
 	return (0);
 }

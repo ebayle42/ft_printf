@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:15:35 by ebayle            #+#    #+#             */
-/*   Updated: 2026/11/01 00:02:15 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/11/01 00:15:44 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_putnbr(int n)
 	return (count);
 }
 
-int	ft_puthexa_long(unsigned long n, int upper)
+int	ft_puthexa_long(unsigned long n, int c)
 {
 	int		i;
 	int		len;
@@ -65,7 +65,7 @@ int	ft_puthexa_long(unsigned long n, int upper)
 		tmp = n % 16;
 		if (tmp < 10)
 			res[i++] = tmp + '0';
-		else if (upper)
+		else if (c == 'X')
 			res[i++] = tmp - 10 + 'A';
 		else
 			res[i++] = tmp - 10 + 'a';
