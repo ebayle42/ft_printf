@@ -5,27 +5,28 @@
 ## Description
 
 ft_printf, because ft_putnbr() and ft_putstr() aren’t enough
-the goal is to re-code printf()
+the goal is to code a mimic of printf()
 
-`ft_printf.c` : 
-`ft_printf.h` : 
-`ft_printf_utils.c` : 
+`ft_printf.c` : main file of the project where ft_printf() is write
+`ft_printf.h` : .h file of the project, contains all the syntax of all functions
+`ft_printf_utils.c` : this is the file where majority of functions are write
+`ft_printf_list.c` : file where arg is used 
 
 ## Instructions
 
 Compile:
 
 ```sh
-make        # builds libft.a
-make clean  # removes object files
-make fclean # removes object files and libft.a
-make re     # fclean + all
+make        # builds libftprintf.a
 ```
-
-Use it in a project:
-
 ```sh
-cc -Wall -Wextra -Werror main.c -L. -lft -I. -o program
+make clean  # removes object files
+```
+```sh
+make fclean # removes object files and libftprintf.a
+```
+```sh
+make re     # fclean + all
 ```
 
 ## Resources
