@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:15:35 by ebayle            #+#    #+#             */
-/*   Updated: 2026/11/01 00:23:01 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/11/01 00:34:34 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_putstr(char *s)
 {
 	if (!s)
 		return (0);
-	ft_putstr_fd(s, 1);;
+	ft_putstr_fd(s, 1);
 	return (ft_strlen(s));
 }
 

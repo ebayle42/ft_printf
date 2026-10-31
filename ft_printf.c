@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 11:24:50 by ebayle            #+#    #+#             */
-/*   Updated: 2026/11/01 00:17:36 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/11/01 00:33:10 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_convert(char c, va_list *ap)
 	else if (c == 'p')
 		return (ft_putmem(va_arg(*ap, void *)));
 	else if (c == '%')
-		return (ft_putchar('%'));	
+		return (ft_putchar('%'));
 	return (0);
 }
 
@@ -55,12 +55,4 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(ap);
 	return (count);
-}
-
-#include <stdio.h>
-#include <limits.h>
-int main (void)
-{
-	ft_printf("%x", 42);
-	return (0);
 }
