@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:15:35 by ebayle            #+#    #+#             */
-/*   Updated: 2026/11/01 00:15:44 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/11/01 00:23:01 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	ft_putnbr(int n)
 int	ft_puthexa_long(unsigned long n, int c)
 {
 	int		i;
-	int		len;
 	int		tmp;
 	char	res[17];
 
@@ -71,10 +70,10 @@ int	ft_puthexa_long(unsigned long n, int c)
 			res[i++] = tmp - 10 + 'a';
 		n = n / 16;
 	}
-	len = i;
+	tmp = i;
 	while (i > 0)
 		ft_putchar(res[--i]);
-	return (len);
+	return (tmp);
 }
 
 int	ft_putmem(void *n)
