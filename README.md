@@ -8,10 +8,9 @@ ft_printf, because ft_putnbr() and ft_putstr() aren’t enough
 
 The goal is to code a mimic of printf()
 
-- `ft_printf.c` : main file of the project where ft_printf() is write
+- `ft_printf.c` : main file of the project where ft_printf() is write ft_convert and ft_putnbr_unsigned as well
 - `ft_printf.h` : .h file of the project, contains all the syntax of all functions
 - `ft_printf_utils.c` : this is the file where majority of functions are write
-- `ft_printf_list.c` : file where arg is used 
 
 ## Instructions
 

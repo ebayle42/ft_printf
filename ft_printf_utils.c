@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 11:15:35 by ebayle            #+#    #+#             */
-/*   Updated: 2026/11/01 00:34:34 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/11/01 19:44:41 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ int	ft_putchar(char c)
 int	ft_putstr(char *s)
 {
 	if (!s)
-		return (0);
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
 	ft_putstr_fd(s, 1);
 	return (ft_strlen(s));
 }
 
-int	ft_putnbr(int n)
+int	ft_putnbr(int n, int is_unsigned)
 {
 	int		count;
 	long	nb;
@@ -34,15 +37,18 @@ int	ft_putnbr(int n)
 	ft_putnbr_fd(n, 1);
 	count = 1;
 	nb = n;
-	if (nb < 0)
+	if (!is_unsigned)
 	{
-		count++;
-		nb = -nb;
-	}
-	while (nb >= 10)
-	{
-		nb /= 10;
-		count++;
+		if (nb < 0)
+		{
+			count++;
+			nb = -nb;
+		}
+		while (nb >= 10)
+		{
+			nb /= 10;
+			count++;
+		}
 	}
 	return (count);
 }
