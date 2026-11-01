@@ -8,9 +8,28 @@ ft_printf, because ft_putnbr() and ft_putstr() aren’t enough
 
 The goal is to code a mimic of printf()
 
-- `ft_printf.c` : main file of the project where ft_printf() is write ft_convert and ft_putnbr_unsigned as well
-- `ft_printf.h` : .h file of the project, contains all the syntax of all functions
-- `ft_printf_utils.c` : this is the file where majority of functions are write
+## Functions
+
+- `ft_printf()` : main function of the project that reads the format string and prints each argument according to its conversion
+- `ft_convert()` : static helper that checks the conversion character and calls the right print function with the next argument from the `va_list`
+- `ft_putchar()` : prints a single character and returns 1
+- `ft_putstr()` : prints a string and returns its length or prints `(null)` and returns 6 if the string is NULL
+- `ft_putnbr()` : prints a signed integer and returns the number of characters printed including the minus sign
+- `ft_putnbr_unsigned()` : prints an unsigned integer recursively and returns the number of digits printed
+- `ft_puthexa_long()` : prints a number in hexadecimal in lowercase or uppercase depending on the conversion (`x` or `X`) and returns the number of digits printed
+- `ft_putmem()` : prints a pointer address in hexadecimal with the `0x` prefix or `(nil)` if the pointer is NULL and returns the number of characters printed
+
+## Supported conversions
+
+- `%c` : prints a single character
+- `%s` : prints a string
+- `%p` : prints a pointer address in hexadecimal
+- `%d` : print a signed decimal integer
+- `%i` : print a signed decimal integer
+- `%u` : prints an unsigned decimal integer
+- `%x` : prints a number in lowercase hexadecimal
+- `%X` : prints a number in uppercase hexadecimal
+- `%%` : prints a percent sign
 
 ## Instructions
 
