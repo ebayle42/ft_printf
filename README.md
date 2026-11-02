@@ -6,7 +6,7 @@
 
 ft_printf, because ft_putnbr() and ft_putstr() aren’t enough
 
-The goal is to code a mimic of printf()
+The goal is to code a mimic of printf() with all of these arguments : cspdiuxX%
 
 ## Functions
 
